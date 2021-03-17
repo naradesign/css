@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS env() function test.</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 1600px;
+            background: linear-gradient(#0074D9 48px, white 48px) 0 0 / 100% 96px repeat-y;
+        }
+        .safeArea {
+          position: fixed;
+          width: 100%;
+          bottom: calc(env(safe-area-inset-bottom) + 48px);
+          height: calc(env(safe-area-inset-bottom) + 48px);
+          background: #FF4136;
+          opacity: .9;
+        }
+    </style>
+</head>
+<body>
+    <div class="safeArea"></div>
+</body>
+</html>
