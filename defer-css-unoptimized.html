@@ -1,0 +1,45 @@
+<!-- Copyright 2018 Google LLC. SPDX-License-Identifier: Apache-2.0 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unoptimized</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>Critical CSS Demo - Unoptimized</h1>
+<h2>이 데모는 아코디언 컨테이너 안쪽의 보이지 않는 문단을 포함하여 모든 스타일을 로드합니다.</h2>
+
+  <button class="accordion-btn">Click to see a paragraph styled with set of styles #1.</button>
+  <div class="container">
+    <p class="paragraph1">This is an example of a paragraph that uses <strong>line breaks</strong> for text. This is an example of a paragraph that uses <strong>line breaks</strong> for text. This is an example of a paragraph that uses <strong>line breaks</strong> for text. This is an example of a paragraph that uses <strong>line breaks</strong> for text. This is an example of a paragraph that uses <strong>line breaks</strong> for text. This is an example of a paragraph that uses <strong>line breaks</strong> for text. This is an example of a paragraph that uses <strong>line breaks</strong> for text.</p>
+  </div>
+
+  <button class="accordion-btn">Click to see a paragraph styled with set of styles #2.</button>
+  <div class="container">
+    <p class="paragraph2">This is an example of a paragraph that uses <strong>elipsis</strong> for the overflow text. This is an example of a paragraph that uses <strong>elipsis</strong> for the overflow text. This is an example of a paragraph that uses <strong>elipsis</strong> for the overflow text. This is an example of a paragraph that uses <strong>elipsis</strong> for the overflow text.</p>
+  </div>
+
+  <button class="accordion-btn">Click to see a paragraph styled with set of styles #3.</button>
+  <div class="container">
+    <p class="paragraph3">This is an example of a paragraph that <strong>trims text</strong>. This is an example of a paragraph that <strong>trims text</strong>. This is an example of a paragraph that <strong>trims text</strong>. This is an example of a paragraph that <strong>trims text</strong>. This is an example of a paragraph that <strong>trims text</strong>. This is an example of a paragraph that <strong>trims text</strong>.</p>
+  </div>
+
+  <script>
+    var accordionBtn = document.getElementsByClassName("accordion-btn");
+
+    for (let i = 0; i < accordionBtn.length; i++) {
+        accordionBtn[i].addEventListener("click", function() {
+            var container = this.nextElementSibling;
+            if (container.style.display === "block") {
+                container.style.display = "none";
+            } else {
+                container.style.display = "block";
+            }
+        });
+    }
+  </script>
+
+</body>
+</html>
