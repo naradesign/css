@@ -1,23 +1,11 @@
 /* Copyright 2018 Google LLC. SPDX-License-Identifier: Apache-2.0 */
-.accordion-btn {
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-  cursor: pointer;
-  color: #444;
-  background-color: #add8e6;
-  padding: 19px;
-  outline: none;
-  border: none;
-  border-radius: 2px;
-}
+
 
 .accordion-btn:hover {
   background-color: #87cefa;
 }
 
 .container {
-  display: none;
   padding: 0 18px;
   background-color: white;
   overflow: hidden;
@@ -50,10 +38,5 @@ p {
   color: #228b22;
 }
 
-h1 {
-  word-spacing: 5px;
-  color: blue;
-  font-weight: bold;
-  text-align: center;
-}
+
 
