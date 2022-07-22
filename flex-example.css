@@ -4,15 +4,23 @@
 body {
     font-family: system-ui, sans-serif;
 }
-a { text-decoration-skip-ink: none; }
+.h1 { font-size: 32px; }
+.h2 { font-size: 24px; }
+.mark {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font: 700 24px monospace;
+}
 .hr { margin: 2em 0; }
 .sup { color: #767676; }
 .spec {
-    display: grid;
+    display: inline-grid;
     grid: auto / minmax(min-content, max-content) 1fr;
     padding: 16px;
+    border-radius: 4px;
     background: #def;
 }
+.initial { color: blue; }
 .spec__term { font-weight: 700; }
 .list {
     display: flex;
@@ -25,21 +33,40 @@ a { text-decoration-skip-ink: none; }
 }
 .list__item {
     display: flex;
-    min-height: 48px;
+    align-items: center;
+}
+.list__input {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: 0 8px;
 }
 .list__label {
     display: inline-flex;
     flex: 1;
-    align-items: center;
     white-space: nowrap;
+    padding: 4px 4px 4px 32px;
+    margin-left: -32px;
+    border-radius: 4px;
 }
+:checked + .list__label {
+    background: yellow;
+    font-weight: 700;
+}
+.demo { overflow-x: auto; }
 .container,
 .item { transition: .2s; }
+.declaration::before { content: '{ '; }
+.declaration::after { content: ' }'; }
+.pre {
+    display: inline-flex;
+    max-width: 100%;
+    overflow-x: auto;
+}
 .code {
     display: block;
     background: #222;
     color: #fff;
     padding: 16px;
     border-radius: 4px;
-    overflow-x: auto;
 }
