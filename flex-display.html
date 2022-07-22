@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display: flex | inline-flex; // CSS demo</title>
+    <link rel="stylesheet" href="flex-demo.css">
+<style id="base">.container {
+    border: 8px solid silver;
+    padding: 4px;
+    gap: 4px;
+}
+.item {
+    padding: 8px;
+    background: coral;
+}
+</style>
+</head>
+<body>
+    <h1>display:<br> flex | inline-flex;</h1>
+    <dl class="spec">
+        <dt class="spec__term">Name:</dt> <dd>display</dd>
+        <dt class="spec__term">New values:</dt> <dd>flex <a href="https://www.w3.org/TR/css-values-4/#component-combinators">|</a> inline-flex</dd>
+    </dl>
+
+    <hr class="hr">
+
+    <section id="try">
+        <h2>Applies to: <mark id="applies">#container</mark></h2>
+        <ul class="list">
+            <li class="list__item">
+                <input type="radio" name="display" id="block" checked>
+                <label class="list__label" for="block">display: block;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="display" id="inline-block">
+                <label class="list__label" for="inline-block">display: inline-block;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="display" id="flex">
+                <label class="list__label" for="flex">display: flex;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="display" id="inline-flex">
+                <label class="list__label" for="inline-flex">display: inline-flex;</label>
+            </li>
+        </ul>
+    </section>
+
+    <hr class="hr">
+
+    <section>
+        <h2>Output</h2>
+        ➡️
+        <div id="container" class="container">
+            <div class="item item--1">1️⃣</div>
+            <div class="item item--2">2️⃣ 2️⃣</div>
+            <div class="item item--3">3️⃣ 3️⃣ 3️⃣</div>
+        </div>
+        ⬅️
+    </section>
+
+    <hr class="hr">
+
+    <section>
+        <h2>Base code</h2>
+        <pre>
+            <code id="code" class="code"></code>
+        </pre>
+    </section>
+
+
+
+    <a href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">https://www.w3.org/TR/css-flexbox-1/#flex-containers</a>
+
+
+
+    <script src="flex-demo.js"></script>
+</body>
+</html>

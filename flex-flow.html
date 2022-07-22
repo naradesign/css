@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-flow:: &lt;‘flex-direction’&gt; || &lt;‘flex-wrap’&gt;; // CSS demo</title>
+    <link rel="stylesheet" href="flex-demo.css">
+<style id="base">.container {
+    display: flex;
+    width: 300px;
+    height: 120px;
+    padding: 4px;
+    gap: 4px;
+    border: 8px solid silver;
+}
+.item {
+    white-space: nowrap;
+    padding: 8px;
+    background: coral;
+}
+</style>
+</head>
+<body>
+    <h1>flex-flow:<br> &lt;‘flex-direction’&gt; <a href="https://www.w3.org/TR/css-values-4/#component-combinators">||</a> &lt;‘flex-wrap’&gt;;</h1>
+
+    <dl class="spec">
+        <dt class="spec__term">Name:</dt> <dd>flex-direction</dd>
+        <dt class="spec__term">Value:</dt> <dd>row <a href="https://www.w3.org/TR/css-values-4/#component-combinators">|</a> row-reverse <a href="https://www.w3.org/TR/css-values-4/#component-combinators">|</a> column <a href="https://www.w3.org/TR/css-values-4/#component-combinators">|</a> column-reverse</dd>
+        <dt class="spec__term">Initial:</dt> <dd>row</dd>
+        <dt class="spec__term">Applies to:</dt> <dd>flex containers</dd>
+    </dl>
+    <dl class="spec">
+        <dt class="spec__term">Name:</dt> <dd>flex-wrap</dd>
+        <dt class="spec__term">Value:</dt> <dd>nowrap <a href="https://www.w3.org/TR/css-values-4/#component-combinators">|</a> wrap <a href="https://www.w3.org/TR/css-values-4/#component-combinators">|</a> wrap-reverse</dd>
+        <dt class="spec__term">Initial:</dt> <dd>nowrap</dd>
+        <dt class="spec__term">Applies to:</dt> <dd>flex containers</dd>
+    </dl>
+
+    <hr class="hr">
+
+    <section id="try">
+        <h2>Applies to: <mark id="applies">#container</mark></h2>
+        <ul class="list">
+            <li class="list__item">
+                <input type="radio" name="flow" id="row" checked>
+                <label class="list__label" for="row">flex-flow: row;<sup class="sup">(== flex-flow: row nowrap;)</sup></label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="row-wrap">
+                <label class="list__label" for="row-wrap">flex-flow: row wrap;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="row-wrap-reverse">
+                <label class="list__label" for="row-wrap-reverse">flex-flow: row wrap-reverse;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="row-reverse">
+                <label class="list__label" for="row-reverse">flex-flow: row-reverse;<sup class="sup">(== flex-flow: row-reverse nowrap;)</sup></label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="row-reverse-wrap">
+                <label class="list__label" for="row-reverse-wrap">flex-flow: row-reverse wrap;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="row-reverse-wrap-reverse">
+                <label class="list__label" for="row-reverse-wrap-reverse">flex-flow: row-reverse wrap-reverse;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="column">
+                <label class="list__label" for="column">flex-flow: column;<sup class="sup">(== flex-flow: column nowrap;)</sup></label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="column-wrap">
+                <label class="list__label" for="column-wrap">flex-flow: column wrap;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="column-wrap-reverse">
+                <label class="list__label" for="column-wrap-reverse">flex-flow: column wrap-reverse;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="column-reverse">
+                <label class="list__label" for="column-reverse">flex-flow: column-reverse;<sup class="sup">(== flex-flow: column-reverse nowrap;)</sup></label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="column-reverse-wrap">
+                <label class="list__label" for="column-reverse-wrap">flex-flow: column-reverse wrap;</label>
+            </li>
+            <li class="list__item">
+                <input type="radio" name="flow" id="column-reverse-wrap-reverse">
+                <label class="list__label" for="column-reverse-wrap-reverse">flex-flow: column-reverse wrap-reverse;</label>
+            </li>
+        </ul>
+    </section>
+
+    <hr class="hr">
+
+    <section>
+        <h2>Output</h2>
+        <div class="demo">
+            ➡️
+            <div id="container" class="container">
+                <div class="item item--1">1️⃣</div>
+                <div class="item item--2">2️⃣ 2️⃣</div>
+                <div class="item item--3">3️⃣ 3️⃣ 3️⃣</div>
+                <div class="item item--3">4️⃣ 4️⃣ 4️⃣ 4️⃣</div>
+                <div class="item item--3">5️⃣ 5️⃣ 5️⃣ 5️⃣ 5️⃣</div>
+            </div>
+            ⬅️
+        </div>
+    </section>
+
+    <hr class="hr">
+
+    <section>
+        <h2>Base code</h2>
+        <pre>
+            <code id="code" class="code"></code>
+        </pre>
+    </section>
+
+
+
+    <a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property">https://www.w3.org/TR/css-flexbox-1/#flex-flow-property</a>
+
+
+
+    <script src="flex-demo.js"></script>
+</body>
+</html>

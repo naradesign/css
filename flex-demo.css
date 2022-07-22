@@ -1,0 +1,45 @@
+[class],
+[class]::before,
+[class]::after { box-sizing: border-box; }
+body {
+    font-family: system-ui, sans-serif;
+}
+a { text-decoration-skip-ink: none; }
+.hr { margin: 2em 0; }
+.sup { color: #767676; }
+.spec {
+    display: grid;
+    grid: auto / minmax(min-content, max-content) 1fr;
+    padding: 16px;
+    background: #def;
+}
+.spec__term { font-weight: 700; }
+.list {
+    display: flex;
+    flex-flow: wrap;
+    gap: 0 16px;
+    list-style: none;
+    padding-left: 0;
+    font: 16px monospace;
+    overflow-x: auto;
+}
+.list__item {
+    display: flex;
+    min-height: 48px;
+}
+.list__label {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    white-space: nowrap;
+}
+.container,
+.item { transition: .2s; }
+.code {
+    display: block;
+    background: #222;
+    color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
