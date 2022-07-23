@@ -1,15 +1,14 @@
 [class],
 [class]::before,
 [class]::after { box-sizing: border-box; }
-body {
-    font-family: system-ui, sans-serif;
-}
-.h1 { font-size: 32px; }
-.h2 { font-size: 24px; }
+body { font-family: system-ui, sans-serif; }
+.h1 { font-size: 24px; }
+.h2 { font-size: 20px; }
 .mark {
     padding: 4px 8px;
     border-radius: 4px;
-    font: 700 24px monospace;
+    font: 700 20px monospace;
+    letter-spacing: -0.04em;
 }
 .hr { margin: 2em 0; }
 .sup { color: #767676; }
@@ -48,16 +47,22 @@ body {
     padding: 4px 4px 4px 32px;
     margin-left: -32px;
     border-radius: 4px;
+    letter-spacing: -0.04em;
+    font-size: 16px;
 }
 :checked + .list__label {
     background: yellow;
     font-weight: 700;
 }
 .demo { overflow-x: auto; }
-.container,
 .item { transition: .2s; }
 .declaration::before { content: '{ '; }
 .declaration::after { content: ' }'; }
+.codeReview {
+    display: flex;
+    flex-flow: wrap;
+    gap: 16px;
+}
 .pre {
     display: inline-flex;
     max-width: 100%;
@@ -69,4 +74,9 @@ body {
     color: #fff;
     padding: 16px;
     border-radius: 4px;
+    font-size: 16px;
+}
+.code--eq {
+    font-size: 20px;
+    color: yellow;
 }

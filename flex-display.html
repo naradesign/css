@@ -7,9 +7,9 @@
     <title>display: flex | inline-flex; // CSS example</title>
     <link rel="stylesheet" href="flex-example.css">
 <style id="base">.container {
+    padding: 8px;
+    gap: 8px;
     border: 8px solid silver;
-    padding: 4px;
-    gap: 4px;
 }
 .item {
     padding: 8px;
@@ -21,10 +21,12 @@
 <body>
     <h1 class="h1">display:<br> flex | inline-flex;</h1>
     <dl class="spec">
-        <dt class="spec__term">Name:</dt> <dd>display</dd>
-        <dt class="spec__term">New values:</dt> <dd>flex | inline-flex</dd>
+        <dt class="spec__term">Name:</dt>
+        <dd class="spec__def">display</dd>
+        <dt class="spec__term">New values:</dt>
+        <dd class="spec__def">flex | inline-flex</dd>
     </dl>
-    <p class="p">A bar(|): exactly one of them must occur.</p>
+    <p class="p">(|): Exactly one of them must occur.</p>
 
     <hr class="hr">
 
@@ -65,12 +67,14 @@
 
     <hr class="hr">
 
-    <section class="section">
-        <h2 class="h2">Base code</h2>
-        <pre class="pre">
-            <code id="code" class="code"></code>
-        </pre>
-    </section>
+    <div class="codeReview">
+        <section class="section">
+            <h2 class="h2">Base code</h2>
+            <pre class="pre">
+                <code id="base-output" class="code code--base"></code>
+            </pre>
+        </section>
+    </div>
 
     <hr class="hr">
 
