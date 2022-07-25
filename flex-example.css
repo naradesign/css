@@ -63,7 +63,7 @@ body { font-family: system-ui, sans-serif; }
     font-weight: 700;
 }
 .fieldset {
-    border: 1px dashed #ccc;
+    border: 1px dashed #767676;
     border-radius: 4px;
 }
 .legend { font-weight: 700; }
