@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flex: shorthand // CSS example</title>
-    <link rel="stylesheet" href="flex-example.css">
+    <link rel="stylesheet" href="css-example.css">
 <style id="base">.container {
     display: flex;
     padding: 8px;
@@ -14,7 +14,6 @@
 }
 .item {
     padding: 8px;
-    white-space: nowrap;
     background: coral;
 }
 </style>
@@ -22,49 +21,52 @@
 <body>
     <h1 class="h1">flex:<br> shorthand;</h1>
 
-    <dl class="spec">
-        <dt class="spec__term">Name:</dt>
-        <dd class="spec__def">flex</dd>
-        <dt class="spec__term">Value:</dt>
-        <dd class="spec__def">none | [ &lt;‘flex-grow’&gt; &lt;‘flex-shrink’&gt;? || &lt;‘flex-basis’&gt; ]</dd>
-        <dt class="spec__term">Initial:</dt>
-        <dd class="spec__def"><strong class="initial">0 1 auto</strong></dd>
-        <dt class="spec__term">Applies to:</dt>
-        <dd class="spec__def">flex items</dd>
-    </dl>
-    <dl class="spec">
-        <dt class="spec__term">Name:</dt>
-        <dd class="spec__def">flex-grow</dd>
-        <dt class="spec__term">Value:</dt>
-        <dd class="spec__def">&lt;number&gt;</dd>
-        <dt class="spec__term">Initial:</dt>
-        <dd class="spec__def"><strong class="initial">0</strong></dd>
-        <dt class="spec__term">Applies to:</dt>
-        <dd class="spec__def">flex items</dd>
-    </dl>
-    <dl class="spec">
-        <dt class="spec__term">Name:</dt>
-        <dd class="spec__def">flex-shrink</dd>
-        <dt class="spec__term">Value:</dt>
-        <dd class="spec__def">&lt;number&gt;</dd>
-        <dt class="spec__term">Initial:</dt>
-        <dd class="spec__def"><strong class="initial">1</strong></dd>
-        <dt class="spec__term">Applies to:</dt>
-        <dd class="spec__def">flex items</dd>
-    </dl>
-    <dl class="spec">
-        <dt class="spec__term">Name:</dt>
-        <dd class="spec__def">flex-basis</dd>
-        <dt class="spec__term">Value:</dt>
-        <dd class="spec__def">content | &lt;‘width’&gt;</dd>
-        <dt class="spec__term">Initial:</dt>
-        <dd class="spec__def"><strong class="initial">auto</strong></dd>
-        <dt class="spec__term">Applies to:</dt>
-        <dd class="spec__def">flex items</dd>
-    </dl>
-    <p class="p">(||): One or more of them must occur, in any order.</p>
-    <p class="p">(|): Exactly one of them must occur.</p>
-    <p class="p">(?): Occurs zero or one times.</p>
+    <details class="details">
+        <summary class="summary">Syntax details:</summary>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">flex</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">none | [ &lt;‘flex-grow’&gt; &lt;‘flex-shrink’&gt;? || &lt;‘flex-basis’&gt; ]</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">0 1 auto</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">flex items</dd>
+        </dl>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">flex-grow</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">&lt;number&gt;</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">0</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">flex items</dd>
+        </dl>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">flex-shrink</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">&lt;number&gt;</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">1</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">flex items</dd>
+        </dl>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">flex-basis</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">content | &lt;‘width’&gt;</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">auto</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">flex items</dd>
+        </dl>
+        <p class="p">(||): One or more of them must occur, in any order.</p>
+        <p class="p">(|): Exactly one of them must occur.</p>
+        <p class="p">(?): Occurs zero or one times.</p>
+    </details>
 
     <hr class="hr">
 
@@ -73,19 +75,19 @@
         <ul class="list">
             <li class="list__item">
                 <input class="list__input" type="radio" name="flex" id="initial" checked>
-                <label class="list__label" for="initial">flex: initial;<sup class="sup">(== flex: 0 1 auto;)</sup></label>
+                <label class="list__label" for="initial">flex: initial;<sup class="sup">/* == 0 1 auto */</sup></label>
             </li>
             <li class="list__item">
                 <input class="list__input" type="radio" name="flex" id="auto">
-                <label class="list__label" for="auto">flex: auto;<sup class="sup">(== flex: 1 1 auto;)</sup></label>
+                <label class="list__label" for="auto">flex: auto;<sup class="sup">/* == 1 1 auto */</sup></label>
             </li>
             <li class="list__item">
                 <input class="list__input" type="radio" name="flex" id="none">
-                <label class="list__label" for="none">flex: none;<sup class="sup">(== flex: 0 0 auto;)</sup></label>
+                <label class="list__label" for="none">flex: none;<sup class="sup">/* == 0 0 auto */</sup></label>
             </li>
             <li class="list__item">
                 <input class="list__input" type="radio" name="flex" id="positive-number">
-                <label class="list__label" for="positive-number">flex: 1;<sup class="sup">(== flex: 1 1;)(== flex: 1 1 0%;)(== flex: 1 0%;)(== flex: 0%;)</sup></label>
+                <label class="list__label" for="positive-number">flex: 1;<sup class="sup">/* == 1 1, == 1 1 0%, == 1 0%, == 0% */</sup></label>
             </li>
         </ul>
         <fieldset class="fieldset">
@@ -116,29 +118,26 @@
     <section class="section">
         <h2 class="h2"><mark class="mark"><output id="selector" class="selector"></output> <output id="declaration" class="declaration"></output></mark></h2>
         <div class="demo">
-            ➡️
+            🌼
             <div id="container" class="container">
                 <div class="item item--1">1️⃣</div>
                 <div class="item item--2">2️⃣ 2️⃣</div>
                 <div class="item item--3">3️⃣ 3️⃣ 3️⃣</div>
             </div>
-            ⬅️
+            🌼
         </div>
+        <details class="details">
+            <summary class="summary">Base code:</summary>
+            <pre class="pre"><code id="base-output" class="code code--block code--base"></code></pre>
+        </details>
     </section>
 
     <hr class="hr">
 
-
-    <div class="codeReview">
-        <section class="codeReview__item">
-            <h2 class="h2">Equivalent to:</h2>
-            <pre class="pre"><code id="equivalent-to" class="code code--block code--eq" data-eq="flex-grow flex-shrink flex-basis"></code></pre>
-        </section>
-        <section class="codeReview__item">
-            <h2 class="h2">Base code:</h2>
-            <pre class="pre"><code id="base-output" class="code code--block code--base"></code></pre>
-        </section>
-    </div>
+    <section class="section">
+        <h2 class="h2">Equivalent to:</h2>
+        <pre class="pre"><code id="equivalent-to" class="code code--block code--eq" data-eq="flex-grow flex-shrink flex-basis"></code></pre>
+    </section>
 
     <hr class="hr">
 
@@ -148,6 +147,6 @@
 
 
 
-    <script src="flex-example.js"></script>
+    <script src="css-example.js"></script>
 </body>
 </html>

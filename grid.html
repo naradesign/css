@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid: shorthand; // CSS example</title>
+    <link rel="stylesheet" href="css-example.css">
+<style id="base">.container {
+    display: grid;
+    padding: 8px;
+    gap: 8px;
+    border: 8px solid silver;
+}
+.item {
+    padding: 8px;
+    background: coral;
+}
+</style>
+</head>
+<body>
+    <h1 class="h1">grid:<br> shorthand;</h1>
+    <details class="details">
+        <summary class="summary">Syntax details:</summary>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">grid</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">&lt;'grid-template'&gt;<br> |<br> &lt;'grid-template-rows'&gt; / [ auto-flow && dense? ] &lt;'grid-auto-columns'&gt;?<br> |<br> [ auto-flow && dense? ] &lt;'grid-auto-rows'&gt;? / &lt;'grid-template-columns'&gt;</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">none</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">grid containers</dd>
+        </dl>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">grid-template</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">none<br> |<br> [ &lt;'grid-template-rows'&gt; / &lt;'grid-template-columns'&gt; ]</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">none</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">grid containers</dd>
+        </dl>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">grid-template-columns, grid-template-rows</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">none | &lt;track-list&gt; | &lt;auto-track-list&gt;</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">none</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">grid containers</dd>
+        </dl>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">grid-auto-flow</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">[ row | column ] || dense</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">row</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">grid containers</dd>
+        </dl>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">grid-auto-columns, grid-auto-rows</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">&lt;track-size&gt;+</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">auto</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">grid containers</dd>
+        </dl>
+
+        <p class="p">(&&): All of which must occur, in any order.</p>
+        <p class="p">(||): One or more of them must occur, in any order.</p>
+        <p class="p">(|): Exactly one of them must occur.</p>
+        <p class="p">(+): Occurs one or more times.</p>
+        <p class="p">(?): Occurs zero or one times.</p>
+    </details>
+
+    <hr class="hr">
+
+    <section id="try" class="section">
+        <h2 class="h2">Applies to: <mark id="applies" class="mark">#container</mark></h2>
+        <ul class="list">
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid" id="none" checked>
+                <label class="list__label" for="none">grid: none; <sup class="sup">/* Initial value */</sup></label>
+            </li>
+        </ul>
+        <fieldset class="fieldset">
+            <legend class="legend">&lt;'grid-template-rows'&gt; / &lt;'grid-template-columns'&gt;</legend>
+            <ul class="list">
+                <li class="list__item">
+                    <input class="list__input" type="radio" name="grid" id="auto-and-311">
+                    <label class="list__label" for="auto-and-311">grid: auto / 3fr 1fr 1fr</label>
+                </li>
+                <li class="list__item">
+                    <input class="list__input" type="radio" name="grid" id="311-and-auto">
+                    <label class="list__label" for="311-and-auto">grid: 3fr 1fr 1fr / auto;</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend class="legend">&lt;'grid-template-rows'&gt; / [ auto-flow && dense? ] &lt;'grid-auto-columns'&gt;?</legend>
+            <ul class="list">
+                <li class="list__item">
+                    <input class="list__input" type="radio" name="grid" id="11-and-autoflow-311">
+                    <label class="list__label" for="11-and-autoflow-311">grid: 1fr 1fr / auto-flow 3fr 1fr 1fr;</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend class="legend">[ auto-flow && dense? ] &lt;'grid-auto-rows'&gt;? / &lt;'grid-template-columns'&gt;</legend>
+            <ul class="list">
+                <li class="list__item">
+                    <input class="list__input" type="radio" name="grid" id="autoflow-311-and-11">
+                    <label class="list__label" for="autoflow-311-and-11">grid: auto-flow 3fr 1fr 1fr / 1fr 1fr;</label>
+                </li>
+            </ul>
+        </fieldset>
+    </section>
+
+    <hr class="hr">
+
+    <section class="section">
+        <h2 class="h2"><mark class="mark"><output id="selector" class="selector"></output> <output id="declaration" class="declaration"></output></mark></h2>
+        <div class="demo">
+            🌼
+            <div id="container" class="container">
+                <div class="item item--1">1️⃣</div>
+                <div class="item item--2">2️⃣ 2️⃣</div>
+                <div class="item item--3">3️⃣ 3️⃣ 3️⃣</div>
+                <div class="item item--3">4️⃣ 4️⃣ 4️⃣ 4️⃣</div>
+                <div class="item item--3">5️⃣ 5️⃣ 5️⃣ 5️⃣ 5️⃣</div>
+            </div>
+            🌼
+        </div>
+        <details class="details">
+            <summary class="summary">Base code:</summary>
+            <pre class="pre"><code id="base-output" class="code code--block code--base"></code></pre>
+        </details>
+    </section>
+
+    <hr class="hr">
+
+    <section class="section">
+        <h2 class="h2">Equivalent to:</h2>
+        <pre class="pre"><code id="equivalent-to" class="code code--block code--eq" data-eq="grid-template-rows grid-template-columns grid-template-areas grid-auto-flow grid-auto-rows grid-auto-columns"></code></pre>
+    </section>
+
+    <hr class="hr">
+
+    <p class="p">
+        <a class="link" href="https://www.w3.org/TR/css-grid-1/#grid-shorthand">https://www.w3.org/TR/css-grid-1/#grid-shorthand</a>
+    </p>
+
+
+
+    <script src="css-example.js"></script>
+</body>
+</html>

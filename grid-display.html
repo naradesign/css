@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>display: flex | inline-flex; // CSS example</title>
+    <title>display: grid | inline-grid; // CSS example</title>
     <link rel="stylesheet" href="css-example.css">
 <style id="base">.container {
     padding: 8px;
@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-    <h1 class="h1">display:<br> flex | inline-flex;</h1>
+    <h1 class="h1">display:<br> grid | inline-grid;</h1>
 
     <details class="details">
         <summary class="summary">Syntax details:</summary>
@@ -26,7 +26,7 @@
             <dt class="spec__term">Name:</dt>
             <dd class="spec__def">display</dd>
             <dt class="spec__term">New values:</dt>
-            <dd class="spec__def">flex | inline-flex</dd>
+            <dd class="spec__def">grid | inline-grid</dd>
         </dl>
         <p class="p">(|): Exactly one of them must occur.</p>
     </details>
@@ -51,6 +51,14 @@
             <li class="list__item">
                 <input class="list__input" type="radio" name="display" id="inline-flex">
                 <label class="list__label" for="inline-flex">display: inline-flex;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="display" id="grid">
+                <label class="list__label" for="grid">display: grid;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="display" id="inline-grid">
+                <label class="list__label" for="inline-grid">display: inline-grid;</label>
             </li>
         </ul>
     </section>
@@ -77,7 +85,7 @@
     <hr class="hr">
 
     <p class="p">
-        <a class="link" href="https://www.w3.org/TR/css-flexbox-1/#flex-containers">https://www.w3.org/TR/css-flexbox-1/#flex-containers</a>
+        <a class="link" href="https://www.w3.org/TR/css-grid-1/#grid-model">https://www.w3.org/TR/css-grid-1/#grid-model</a>
     </p>
 
 

@@ -12,6 +12,8 @@ body { font-family: system-ui, sans-serif; }
 }
 .hr { margin: 2em 0; }
 .sup { color: #767676; }
+.details { margin: 1em 0; }
+.summary::marker { content: '🔥 '; }
 .spec {
     grid: auto / minmax(min-content, max-content) minmax(max-content, 1fr);
     max-width: 100%;
@@ -63,6 +65,8 @@ body { font-family: system-ui, sans-serif; }
     font-weight: 700;
 }
 .fieldset {
+    display: inline-block;
+    margin-bottom: 1em;
     border: 1px dashed #767676;
     border-radius: 4px;
 }
@@ -71,17 +75,6 @@ body { font-family: system-ui, sans-serif; }
 .item { transition: .2s; }
 .declaration::before { content: '{ '; }
 .declaration::after { content: ' }'; }
-.codeReview {
-    display: flex;
-    flex-flow: wrap;
-    gap: 16px;
-}
-@media (max-width: 690px) {
-    .codeReview__item { width: 100%; }
-}
-@media (min-width: 691px) {
-    .codeReview__item { max-width: 100%; }
-}
 .pre { width: 100%; }
 .code {
     overflow-x: auto;
@@ -90,7 +83,6 @@ body { font-family: system-ui, sans-serif; }
     letter-spacing: -0.04em;
 }
 .code--inline {
-    display: inline-block;
     background: #ddd;
     padding: 4px;
 }
