@@ -11,11 +11,15 @@ const defaultValueStr = tryItEl.querySelector(':checked').nextElementSibling.tex
 
 // 동등한 속성+값 문자열 구하기
 const getEquivalentStr = () => {
-    let elementStyleStr = '';
+    let elementStyleStr = '\n';
     const elementStyleObj = demoTargetEl[0].style;
 
     for (let i = 0; i < equivalentArr.length; i++) {
-        elementStyleStr += equivalentArr[i] + ': ' + elementStyleObj[equivalentArr[i].replace(/-./g, x=>x[1].toUpperCase())] + ';\n';
+        if (equivalentArr[i] === '==') {
+            elementStyleStr += equivalentArr[i] + '\n';
+        } else {
+            elementStyleStr += equivalentArr[i] + ': ' + elementStyleObj[equivalentArr[i].replace(/-./g, x=>x[1].toUpperCase())] + ';\n';
+        }
     }
 
     return elementStyleStr;
@@ -34,7 +38,7 @@ const setEqStr = (valueStr) => {
         return;
     }
 
-    equivalentToEl.textContent = valueStr + '\n==\n' + getEquivalentStr();
+    equivalentToEl.textContent = valueStr + getEquivalentStr();
 };
 
 // 기본 스타일을 초깃값으로 적용하기

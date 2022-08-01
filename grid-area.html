@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-aria: shorthand; // CSS example</title>
+    <link rel="stylesheet" href="css-example.css">
+<style id="base">.container {
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+    padding: 8px;
+    gap: 8px;
+    border: 8px solid silver;
+}
+.item {
+    padding: 8px;
+    background: coral;
+}
+.item--3 { background: royalblue; }
+</style>
+</head>
+<body>
+    <h1 class="h1">grid-aria:<br> shorthand;</h1>
+    <details class="details">
+        <summary class="summary">Syntax details:</summary>
+        <dl class="spec">
+            <dt class="spec__term">Name:</dt>
+            <dd class="spec__def">grid-area</dd>
+            <dt class="spec__term">Value:</dt>
+            <dd class="spec__def">&lt;grid-line&gt; [ / &lt;grid-line&gt; ]{0,3}</dd>
+            <dt class="spec__term">Initial:</dt>
+            <dd class="spec__def"><strong class="initial">auto</strong></dd>
+            <dt class="spec__term">Applies to:</dt>
+            <dd class="spec__def">grid items and absolutely-positioned boxes whose containing block is a grid container.</dd>
+        </dl>
+
+        <p class="p">({A,B}): At least A and at most B times.</p>
+    </details>
+
+    <hr class="hr">
+
+    <section id="try" class="section">
+        <h2 class="h2">Applies to: <mark id="applies" class="mark">.item--3</mark></h2>
+        <ul class="list">
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="auto" checked>
+                <label class="list__label" for="auto">grid-area: auto; <sup class="sup">/* Initial value */</sup></label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="11">
+                <label class="list__label" for="11">grid-area: 1 / 1; <sup class="sup">/* == 1 / 1 / auto / auto */</sup></label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="23">
+                <label class="list__label" for="23">grid-area: 2 / 3;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="rowstart-span2">
+                <label class="list__label" for="rowstart-span2">grid-area: span 2;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="colstart-span2">
+                <label class="list__label" for="colstart-span2">grid-area: auto / span 2;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="rowend-span2">
+                <label class="list__label" for="rowend-span2">grid-area: 1 / 1 / span 2;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="colend-span2">
+                <label class="list__label" for="colend-span2">grid-area: 1 / 1 / auto / span 2;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="11-eq">
+                <label class="list__label" for="11-eq">grid-area: -4 / -4;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="23-eq">
+                <label class="list__label" for="23-eq">grid-area: -3 / -2;</label>
+            </li>
+            <li class="list__item">
+                <input class="list__input" type="radio" name="grid-area" id="rowstart-span2-eq">
+                <label class="list__label" for="rowstart-span2-eq">grid-area: -4 / -2 / -2;</label>
+            </li>
+        </ul>
+    </section>
+
+    <hr class="hr">
+
+    <section class="section">
+        <h2 class="h2"><mark class="mark"><output id="selector" class="selector"></output> <output id="declaration" class="declaration"></output></mark></h2>
+        <div class="demo">
+            🌼
+            <div id="container" class="container">
+                <div class="item item--1">1️⃣</div>
+                <div class="item item--2">2️⃣ 2️⃣</div>
+                <div class="item item--3">3️⃣ 3️⃣ 3️⃣</div>
+                <div class="item item--4">4️⃣ 4️⃣ 4️⃣ 4️⃣</div>
+                <div class="item item--5">5️⃣ 5️⃣ 5️⃣ 5️⃣ 5️⃣</div>
+            </div>
+            🌼
+        </div>
+        <details class="details">
+            <summary class="summary">Base code:</summary>
+            <pre class="pre"><code id="base-output" class="code code--block code--base"></code></pre>
+        </details>
+    </section>
+
+    <hr class="hr">
+
+    <section class="section">
+        <h2 class="h2">Equivalent to:</h2>
+        <pre class="pre"><code id="equivalent-to" class="code code--block code--eq" data-eq="== grid-row grid-column == grid-row-start grid-row-end grid-column-start grid-column-end"></code></pre>
+    </section>
+
+    <hr class="hr">
+
+    <p class="p">
+        <a class="link" href="https://www.w3.org/TR/css-grid-1/#propdef-grid-area">https://www.w3.org/TR/css-grid-1/#propdef-grid-area</a>
+    </p>
+
+
+
+    <script src="css-example.js"></script>
+</body>
+</html>
