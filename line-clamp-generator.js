@@ -9,14 +9,22 @@ const basePropArr = ['display', '-webkit-box-orient', 'overflow', 'text-overflow
 const userPropArr = ['-webkit-line-clamp', 'font-size', 'line-height', 'height'];
 
 // 코드 표시
-const setCode = () => {
+const setCode = (isMultiline) => {
     let cssCodeStr = '';
 
     for (let i = 0; i < basePropArr.length; i++) {
+        if (!isMultiline && basePropArr[i] === '-webkit-box-orient') {
+            continue;
+        }
+
         cssCodeStr += basePropArr[i] + ': ' + getComputedStyle(clampEl)[basePropArr[i]] + ';\n';
     }
 
     for (let i = 0; i < userPropArr.length; i++) {
+        if (!isMultiline) {
+            break;
+        }
+
         let itemStr = userPropArr[i];
 
         cssCodeStr += itemStr + ': ' + clampEl.style[itemStr] + ';';
@@ -33,13 +41,32 @@ const setCode = () => {
 
 // 스타일 설정
 const setStyle = () => {
-    clampEl.style.WebkitLineClamp = lineClampEl.value; // 클램프
-    clampEl.style.fontSize = fontSizeEl.value + 'px'; // 글꼴 크기
-    clampEl.style.lineHeight = lineHeightEl.value; // 줄 간격
-    clampEl.style.height = 'auto'; // 높이 초기화
-    clampEl.style.height = getComputedStyle(clampEl)['height']; // 높이 다시 설정
+    const isMultiline = +lineClampEl.value > 1;
 
-    setCode();
+    if (isMultiline) { // 멀티라인 초기화
+        clampEl.style.display = '-webkit-box';
+        clampEl.style.whiteSpace = null;
+        clampEl.style.WebkitBoxOrient = 'vertical';
+        clampEl.style.WebkitLineClamp = lineClampEl.value;
+        clampEl.style.fontSize = fontSizeEl.value + 'px';
+        clampEl.style.lineHeight = lineHeightEl.value;
+        clampEl.style.height = 'auto'; // 높이 초기화
+        clampEl.style.height = getComputedStyle(clampEl)['height']; // 높이 다시 계산
+        fontSizeEl.disabled = false;
+        lineHeightEl.disabled = false;
+    } else { // 싱글라인 초기화
+        clampEl.style.display = 'block';
+        clampEl.style.whiteSpace = 'nowrap';
+        clampEl.style.WebkitBoxOrient = null;
+        clampEl.style.WebkitLineClamp = null;
+        clampEl.style.fontSize = null;
+        clampEl.style.lineHeight = null;
+        clampEl.style.height = null;
+        fontSizeEl.disabled = true;
+        lineHeightEl.disabled = true;
+    }
+
+    setCode(isMultiline);
 };
 
 // 클립보드로 복사

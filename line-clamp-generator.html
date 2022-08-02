@@ -64,6 +64,9 @@
             text-align: center;
             border-radius: 4px;
         }
+        .input:disabled {
+            background: silver;
+        }
         .pre {
             background: #000;
             overflow-x: auto;
@@ -91,11 +94,11 @@
     <h1 class="h1">CSS line-clamp generator</h1>
     <fieldset class="field">
         <label for="-webkit-line-clamp" class="label">line-clamp:</label>
-        <input id="-webkit-line-clamp" class="input" type="number" inputmode="numeric" value="2" step="1">
+        <input id="-webkit-line-clamp" class="input" type="number" inputmode="numeric" value="2" step="1" min="1">
         <label for="font-size" class="label">font-size:(px)</label>
-        <input id="font-size" class="input" type="number" inputmode="numeric" value="16" step="1">
+        <input id="font-size" class="input" type="number" inputmode="numeric" value="16" step="1" min="10">
         <label for="line-height" class="label">line-height:</label>
-        <input id="line-height" class="input" type="number" inputmode="numeric" value="1.5" step=".1">
+        <input id="line-height" class="input" type="number" inputmode="numeric" value="1.5" step=".1" min="1">
     </fieldset>
 
     <pre class="pre"><code class="code"></code></pre>
