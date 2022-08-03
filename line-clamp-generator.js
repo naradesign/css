@@ -19,7 +19,7 @@ const setCode = (isSingleLine) => {
             continue;
         }
 
-        cssCodeStr += basePropArr[i] + ': ' + getComputedStyle(clampEl)[basePropArr[i]] + ';\n';
+        cssCodeStr += basePropArr[i] + ': ' + clampEl.style[basePropArr[i]] + ';\n';
     }
 
     for (let i = 0; i < userPropArr.length; i++) {
