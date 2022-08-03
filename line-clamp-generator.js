@@ -59,7 +59,7 @@ const setStyle = () => {
         clampEl.style.WebkitLineClamp = lineClampEl.value;
         clampEl.style.fontSize = fontSizeEl.value + 'px';
         clampEl.style.lineHeight = lineHeightEl.value;
-        clampEl.style.maxHeight = getComputedStyle(clampEl)['height']; // 높이 다시 계산
+        clampEl.style.maxHeight = +lineClampEl.value * +fontSizeEl.value * +lineHeightEl.value + 'px'; // 높이 다시 계산
         fontSizeEl.disabled = false;
         lineHeightEl.disabled = false;
     } else { // 싱글라인 초기화
