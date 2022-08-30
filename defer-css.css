@@ -4,16 +4,29 @@
   background-color: #87cefa;
 }
 
+.paragraph1 {
+  word-wrap: break-word;
+  color: #ffa500;
+}
+
+.paragraph2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #0000cd;
+}
+
+.paragraph3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  color: #228b22;
+}
+
 p {
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   border: 1px solid #2e86c1;
   border-radius: 2px;
   padding: 5px;
-}
-
-h1 {
-  word-spacing: 5px;
-  color: blue;
-  text-align: center;
 }
