@@ -12,10 +12,6 @@
   border-radius: 2px;
 }
 
-.accordion-btn:hover {
-  background-color: #87cefa;
-}
-
 .container {
   display: none;
   padding: 0 18px;
@@ -53,11 +49,5 @@ p {
 h1 {
   word-spacing: 5px;
   color: blue;
-  text-align: center;
-}
-
-h3 {
-  word-spacing: -5px;
-  background-color: #eee;
   text-align: center;
 }
