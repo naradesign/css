@@ -1,115 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS line-clamp generator</title>
-    <style>
-        :where(body) {
-            overflow-wrap: break-word;
-            font-family: system-ui, sans-serif;
-        }
-        :where(:lang(ko)) { word-break: keep-all; }
-        :where(img) {
-            max-width: 100%;
-            height: auto;
-        }
-        :where([class]) {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :where([class])::before,
-        :where([class])::after { box-sizing: border-box; }
-        :where(ol[class], ul[class]) { list-style: none; }
-        :where(button[class], fieldset[class], iframe[class], input[class], select[class], textarea[class]) { border: 0; }
-        :where(button[class], dialog[class], input[class], mark[class], meter[class], progress[class]) { background-color: transparent; }
-        :where(table[class]) {
-            border: 0;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        :where(button[class], input[class], meter[class], progress[class], select[class], textarea[class]) {
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        .h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 1em 0;
-        }
-        .field {
-            display: flex;
-            flex-flow: column wrap;
-            align-content: space-between;
-            margin: 16px 0 8px;
-            height: 68px;
-        }
-        .label,
-        .input {
-            width: 32%;
-        }
-        .label {
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 20px;
-            flex: 0;
-        }
-        .input {
-            padding: 0 12px;
-            border: 1px solid #767676;
-            font-size: 24px;
-            flex: 0 48px;
-            text-align: center;
-            border-radius: 4px;
-        }
-        .input:disabled {
-            background: silver;
-        }
-        .pre {
-            background: #000;
-            overflow-x: auto;
-            border-radius: 4px;
-            margin: 8px 0;
-            padding: 8px;
-        }
-        .code {
-            color: #fff;
-            font-size: 16px;
-        }
-        .copyBtn {
-            display: block;
-            width: 100%;
-            height: 48px;
-            margin: 8px 0 16px;
-            background: royalblue;
-            color: #fff;
-            font-size: 24px;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS line-clamp generator</title>
+  <style>
+    :where(body) {
+      overflow-wrap: break-word;
+      font-family: system-ui, sans-serif;
+    }
+
+    :where(:lang(ko)) {
+      word-break: keep-all;
+    }
+
+    :where(img) {
+      max-width: 100%;
+      height: auto;
+    }
+
+    :where([class]) {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :where([class])::before,
+    :where([class])::after {
+      box-sizing: border-box;
+    }
+
+    :where(ol[class], ul[class]) {
+      list-style: none;
+    }
+
+    :where(button[class], fieldset[class], iframe[class], input[class], select[class], textarea[class]) {
+      border: 0;
+    }
+
+    :where(button[class], dialog[class], input[class], mark[class], meter[class], progress[class]) {
+      background-color: transparent;
+    }
+
+    :where(table[class]) {
+      border: 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    :where(button[class], input[class], meter[class], progress[class], select[class], textarea[class]) {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 1em 0;
+    }
+
+    .field {
+      display: flex;
+      flex-flow: column wrap;
+      align-content: space-between;
+      margin: 16px 0 8px;
+      height: 68px;
+    }
+
+    .label,
+    .input {
+      width: 32%;
+    }
+
+    .label {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+      flex: 0;
+    }
+
+    .input {
+      padding: 0 12px;
+      border: 1px solid #767676;
+      font-size: 24px;
+      flex: 0 48px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .input:disabled {
+      background: silver;
+    }
+
+    .pre {
+      background: #000;
+      overflow-x: auto;
+      border-radius: 4px;
+      margin: 8px 0;
+      padding: 8px;
+    }
+
+    .code {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .copyBtn {
+      display: block;
+      width: 100%;
+      height: 48px;
+      margin: 8px 0 16px;
+      background: royalblue;
+      color: #fff;
+      font-size: 24px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1 class="h1">CSS line-clamp generator</h1>
-    <fieldset class="field">
-        <label for="-webkit-line-clamp" class="label">line-clamp:</label>
-        <input id="-webkit-line-clamp" class="input" type="number" inputmode="numeric" value="2" step="1" min="1">
-        <label for="font-size" class="label">font-size:(px)</label>
-        <input id="font-size" class="input" type="number" inputmode="numeric" value="16" step="1" min="10">
-        <label for="line-height" class="label">line-height:</label>
-        <input id="line-height" class="input" type="number" inputmode="numeric" value="1.5" step=".1" min="1">
-    </fieldset>
+  <h1 class="h1">CSS line-clamp generator</h1>
+  <fieldset class="field">
+    <label for="-webkit-line-clamp" class="label">line-clamp:</label>
+    <input id="-webkit-line-clamp" class="input" type="number" inputmode="numeric" value="2" step="1" min="1">
+    <label for="font-size" class="label">font-size:(px)</label>
+    <input id="font-size" class="input" type="number" inputmode="numeric" value="16" step="1" min="10">
+    <label for="line-height" class="label">line-height:</label>
+    <input id="line-height" class="input" type="number" inputmode="numeric" value="1.5" step=".1" min="1">
+  </fieldset>
 
-    <pre class="pre"><code class="code"></code></pre>
-    <button id="copy-btn" class="copyBtn">Copy to clipboard!</button>
+  <pre class="pre"><code class="code"></code></pre>
+  <button id="copy-btn" class="copyBtn">Copy to clipboard!</button>
 
-    <p class="clamp" style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis.</p>
+  <p class="clamp"
+    style="display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">Lorem ipsum
+    dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos aperiam
+    omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem reiciendis. Lorem
+    ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur dolores eos
+    aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem exercitationem
+    reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at impedit, consequatur
+    dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita voluptatem
+    exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea. Ut at
+    impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora expedita
+    voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, cupiditate ea.
+    Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto tempora
+    expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad,
+    cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto
+    tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad,
+    cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto
+    tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad,
+    cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto
+    tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad,
+    cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto
+    tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad,
+    cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto
+    tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad,
+    cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto
+    tempora expedita voluptatem exercitationem reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad,
+    cupiditate ea. Ut at impedit, consequatur dolores eos aperiam omnis, nostrum doloremque magni quod accusantium iusto
+    tempora expedita voluptatem exercitationem reiciendis.</p>
 
-    <p>
-        Have a problem? <a href="https://github.com/naradesign/css/issues/new">Report an issue.</a> or email to me: dece24(at)gmail,com
-    </p>
+  <p>
+    Have a problem? <a href="https://github.com/naradesign/css/issues/new">Report an issue.</a> or email to me:
+    dece24(at)gmail,com
+  </p>
 
-    <script src="line-clamp-generator.js"></script>
+  <script src="line-clamp-generator.js"></script>
 </body>
+
 </html>
